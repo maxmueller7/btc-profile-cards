@@ -1,5 +1,5 @@
 {
-  "name": "btc-int",
+  "name": "btc-profile-cards",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "@types/node": "^12.20.19",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
+    "faker": "^5.5.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -20,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy:heroku:main": "git add . && git commit -m 'pre-deployment push to main' && git push && sleep 5 && git push heroku main"
   },
   "eslintConfig": {
     "extends": [

@@ -19,8 +19,8 @@ TODO: provide heroku site.
 
 ## Time worked on the app:
 
-| Start   | Finish |    Total |
-| ------- | :----: | -------: |
-| 1:00 pm | 2:20pm | 1:20 hrs |
-| 6:30pm  | 8:30pm | 3:20 hrs |
-| 8:45pm  | 9:20pm | 3:55 hrs |
+| Date | Start   | Finish |    Total |
+| ---- | ------- | :----: | -------: |
+| 8/16 | 1:00 pm | 2:20pm | 1:20 hrs |
+| 8/18 | 6:30pm  | 8:30pm | 3:20 hrs |
+| 8/18 | 8:45pm  | 9:20pm | 3:55 hrs |

@@ -22,5 +22,5 @@ TODO: provide heroku site.
 | Start   | Finish |    Total |
 | ------- | :----: | -------: |
 | 1:00 pm | 2:20pm | 1:20 hrs |
-|         |        |          |
+| 6:30pm  | 8:30pm | 3:20 hrs |
 |         |        |          |

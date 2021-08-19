@@ -1,5 +1,126 @@
 .profileCard {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  height: 250px;
+  justify-content: center;
+  width: 750px;
+
+  .profilePicture {
+    align-items: center;
+    background: linear-gradient(
+      157deg,
+      rgba(255, 174, 160, 1) 0%,
+      rgba(255, 207, 160, 1) 43%,
+      rgba(255, 241, 169, 1) 100%
+    );
+    display: inherit;
+    justify-content: center;
+    width: 40%;
+
+    img {
+      border-radius: 50%;
+      min-height: 60%;
+      min-width: 60%;
+    }
+  }
+
+  .profileInfo {
+    background: #f6f6f6;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 1% 3%;
+    width: 60%;
+
+    .profileName {
+      align-items: center;
+      display: flex;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      height: 20%;
+    }
+
+    .profileContact {
+      display: flex;
+      flex-flow: column;
+      height: 60%;
+      justify-content: space-evenly;
+
+      .profileIconAndText {
+        display: flex;
+        text-overflow: ellipsis;
+        span {
+          padding-left: 2%;
+        }
+      }
+    }
+
+    .profileCompanyInfo {
+      display: flex;
+      height: 20%;
+
+      .profileCompanyInfoImageContainer {
+        display: flex;
+        align-items: center;
+        img {
+          border-radius: 10%;
+          max-height: 80%;
+        }
+      }
+
+      .profileCompanyNameAndSlogan {
+        padding-left: 2%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+
+      .profileCompanyName {
+        font-weight: bold;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-flow: column;
+    height: auto;
+    width: 275px;
+    font-size: 0.7rem;
+
+    .profilePicture {
+      height: 120px;
+      img {
+        width: 30%;
+        min-width: 0px;
+        min-height: 0px;
+      }
+      width: 100%;
+    }
+
+    .profileInfo {
+      width: 100%;
+      height: 200px;
+      padding: 0;
+
+      .profileName {
+        padding: 3% 5%;
+        height: 10%;
+      }
+    }
+
+    .profileContact {
+      height: 200px;
+      padding-left: 5%;
+    }
+
+    .profileCompanyInfo {
+      height: 1000px;
+      padding-left: 5%;
+
+      .profileCompanyInfoImageContainer {
+        img {
+          max-width: 30px;
+        }
+      }
+    }
+  }
 }

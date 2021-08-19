@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styles from './ProfileCardsPage.module.scss';
 import faker from 'faker';
 import { ProfileCard } from 'components/ProfileCard';
@@ -27,20 +27,44 @@ const createProfileFromFakerData = (): IProfile => {
 };
 
 export const ProfileCardsPage: FC<{}> = (): JSX.Element => {
-  const data: IProfile[] = [];
+  const [data, setData] = useState<IProfile[]>([]);
 
-  for (let i = 0; i < 20; i++) {
-    data.push(createProfileFromFakerData());
-  }
+  const handleAddProfileCard = (data: IProfile[]): void => {
+    const newData = [...data];
+    const newProfile = createProfileFromFakerData();
+    newData.push(newProfile);
+    setData(newData);
+  };
+
+  useEffect(() => {
+    for (let i = 0; i < 20; i++) {
+      setData((data) => [...data, createProfileFromFakerData()]);
+    }
+  }, []);
+
   return (
     <div>
       {data.map((userProfile) => {
         return (
-          <div className={styles.profileCardContainer} key={userProfile.uuid}>
-            <ProfileCard userProfile={userProfile} key={userProfile.uuid} />
+          <div
+            className={styles.profileCardContainer}
+            key={`[profile-card-div-container-${userProfile.uuid}]`}
+          >
+            <ProfileCard
+              userProfile={userProfile}
+              key={`[profile-card-${userProfile.uuid}]`}
+            />
           </div>
         );
       })}
+      <div className={styles.newCardButtonContainer}>
+        <button
+          className={styles.newCardButton}
+          onClick={() => handleAddProfileCard(data)}
+        >
+          Add New Profile
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import faker from 'faker';
 import { ProfileCard } from 'components/ProfileCard';
-import { setNewProfile } from 'redux/actions/profileActions';
+import { createProfile } from 'redux/actions/profileActions';
 import { IProfile } from 'utils';
 
 import styles from './ProfileCardsPage.module.scss';
@@ -13,7 +13,7 @@ const mapStateToProps = (state: any) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setNewProfile: (profile: IProfile) => dispatch(setNewProfile(profile)),
+  createProfile: (profile: IProfile) => dispatch(createProfile(profile)),
 });
 
 const createProfileFromFakerData = (): IProfile => {
@@ -38,28 +38,23 @@ const createProfileFromFakerData = (): IProfile => {
   };
 };
 
-const ProfileCardsPage: FC<{ profiles: IProfile[]; setNewProfile: any }> = (
+const ProfileCardsPage: FC<{ profiles: IProfile[]; createProfile: any }> = (
   props
 ): JSX.Element => {
-  const [data, setData] = useState<IProfile[]>([]);
-
-  const handleAddProfileCard = (data: IProfile[]): void => {
-    const newData = [...data];
+  const handleAddProfileCard = (createProfile: any): void => {
     const newProfile = createProfileFromFakerData();
-    newData.push(newProfile);
-    setData(newData);
+    createProfile(newProfile);
   };
 
   useEffect(() => {
-    if (props.profiles.length <= 20) {
-      props.setNewProfile(createProfileFromFakerData());
+    if (props.profiles.length < 20) {
+      props.createProfile(createProfileFromFakerData());
     }
-    setData(props.profiles);
-  }, [props.profiles]);
+  }, [props]);
 
   return (
     <div>
-      {data.map((userProfile) => {
+      {props.profiles.map((userProfile) => {
         return (
           <div
             className={styles.profileCardContainer}
@@ -75,7 +70,7 @@ const ProfileCardsPage: FC<{ profiles: IProfile[]; setNewProfile: any }> = (
       <div className={styles.newCardButtonContainer}>
         <button
           className={styles.newCardButton}
-          onClick={() => handleAddProfileCard(data)}
+          onClick={() => handleAddProfileCard(props.createProfile)}
         >
           Add New Profile
         </button>

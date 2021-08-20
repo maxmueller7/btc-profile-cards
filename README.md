@@ -14,11 +14,12 @@ Click <a href="https://btc-cards.herokuapp.com/" target="_blank">here</a> and wa
 
 ## Time worked on the app:
 
-| Date | Start   | Finish |    Total |
-| ---- | ------- | :----: | -------: |
-| 8/17 | 1:00 pm | 2:20pm | 1:20 hrs |
-| 8/18 | 6:30pm  | 8:30pm | 3:20 hrs |
-| 8/18 | 8:40pm  | 9:40pm | 4:20 hrs |
+| Date | Start   | Finish  |    Total |
+| ---- | ------- | :-----: | -------: |
+| 8/17 | 1:00 pm | 2:20pm  | 1:20 hrs |
+| 8/18 | 6:30pm  | 8:30pm  | 3:20 hrs |
+| 8/18 | 8:40pm  | 9:40pm  | 4:20 hrs |
+| 8/19 | 8:40pm  | 10:20pm | 6:00 hrs |
 
 <hr />
 

@@ -23,9 +23,11 @@ export const ProfileCard: FC<{ userProfile: IProfile }> = (
         />
       </div>
       <div className={styles.profileInfo}>
-        <div className={styles.profileName}>
-          <h1>{`${props.userProfile.firstName} ${props.userProfile.lastName}`}</h1>
-        </div>
+        <h1 className={styles.profileName}>
+          <div>{props.userProfile.firstName}</div>
+          {'\u00A0'}
+          <div>{props.userProfile.lastName}</div>
+        </h1>
         <div className={styles.profileContact}>
           <div className={styles.profileIconAndText}>
             <FontAwesomeIcon icon={faEnvelope} />

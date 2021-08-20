@@ -1,8 +1,20 @@
 import React, { FC, useEffect, useState } from 'react';
-import styles from './ProfileCardsPage.module.scss';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 import faker from 'faker';
 import { ProfileCard } from 'components/ProfileCard';
+import { setNewProfile } from 'redux/actions/profileActions';
 import { IProfile } from 'utils';
+
+import styles from './ProfileCardsPage.module.scss';
+
+const mapStateToProps = (state: any) => ({
+  profiles: state.profiles,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setNewProfile: (profile: IProfile) => dispatch(setNewProfile(profile)),
+});
 
 const createProfileFromFakerData = (): IProfile => {
   return {
@@ -26,7 +38,9 @@ const createProfileFromFakerData = (): IProfile => {
   };
 };
 
-export const ProfileCardsPage: FC<{}> = (): JSX.Element => {
+const ProfileCardsPage: FC<{ profiles: IProfile[]; setNewProfile: any }> = (
+  props
+): JSX.Element => {
   const [data, setData] = useState<IProfile[]>([]);
 
   const handleAddProfileCard = (data: IProfile[]): void => {
@@ -37,10 +51,11 @@ export const ProfileCardsPage: FC<{}> = (): JSX.Element => {
   };
 
   useEffect(() => {
-    for (let i = 0; i < 20; i++) {
-      setData((data) => [...data, createProfileFromFakerData()]);
+    if (props.profiles.length <= 20) {
+      props.setNewProfile(createProfileFromFakerData());
     }
-  }, []);
+    setData(props.profiles);
+  }, [props.profiles]);
 
   return (
     <div>
@@ -68,3 +83,5 @@ export const ProfileCardsPage: FC<{}> = (): JSX.Element => {
     </div>
   );
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileCardsPage);

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ProfileCardsPage } from 'pages/ProfileCardsPage';
+import ProfileCardsPage from 'pages/ProfileCardsPage';
 import styles from './App.module.scss';
 
 const App: FC<{}> = (): JSX.Element => {

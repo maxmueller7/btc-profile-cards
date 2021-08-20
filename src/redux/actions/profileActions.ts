@@ -11,7 +11,7 @@ export type ProfileAction = {
   propertyToUpdate: string;
 };
 
-export const setNewProfile = (profile: IProfile): ProfileAction => ({
+export const createProfile = (profile: IProfile): ProfileAction => ({
   type: ProfileActionsTypes.CREATE_PROFILE,
   payload: profile,
   propertyToUpdate: '',

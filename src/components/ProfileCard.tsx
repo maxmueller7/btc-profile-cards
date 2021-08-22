@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import styles from './ProfileCard.module.scss';
 import { IProfile } from 'utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+import styles from './ProfileCard.module.scss';
 
 export const ProfileCard: FC<{ userProfile: IProfile }> = (
   props
@@ -31,7 +32,9 @@ export const ProfileCard: FC<{ userProfile: IProfile }> = (
         <div className={styles.profileContact}>
           <div className={styles.profileIconAndText}>
             <FontAwesomeIcon icon={faEnvelope} />
-            <span>{props.userProfile.emailAddress}</span>
+            <a href={`mailto:${props.userProfile.emailAddress}`}>
+              {props.userProfile.emailAddress}
+            </a>
           </div>
           <div className={styles.profileIconAndText}>
             <FontAwesomeIcon icon={faAddressBook} />
@@ -47,7 +50,9 @@ export const ProfileCard: FC<{ userProfile: IProfile }> = (
           </div>
           <div className={styles.profileIconAndText}>
             <FontAwesomeIcon icon={faGlobe} />
-            <span>{props.userProfile.websiteAddress}</span>
+            <a href={`${props.userProfile.websiteAddress}`}>
+              {props.userProfile.websiteAddress}
+            </a>
           </div>
         </div>
         <div className={styles.profileCompanyInfo}>

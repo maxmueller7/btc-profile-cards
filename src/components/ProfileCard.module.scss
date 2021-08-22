@@ -34,22 +34,32 @@
     .profileName {
       align-items: center;
       display: flex;
+      align-content: flex-start;
       font-family: 'Cormorant Garamond', serif;
       font-weight: 700;
-      height: 20%;
+      margin: 0;
     }
 
     .profileContact {
       display: flex;
       flex-flow: column;
-      height: 60%;
-      justify-content: space-evenly;
 
       .profileIconAndText {
         display: flex;
+        padding: 4px 0px;
+        align-items: center;
         text-overflow: ellipsis;
         span {
           padding-left: 2%;
+        }
+        a {
+          color: #0065b3;
+          padding-left: 2%;
+          cursor: pointer;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }

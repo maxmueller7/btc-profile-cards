@@ -18,10 +18,19 @@ export const ProfileCard: FC<{ userProfile: IProfile }> = (
   return (
     <div className={styles.profileCard}>
       <div className={styles.profilePicture}>
-        <img
-          src={props.userProfile.profilePictureLink}
-          alt={`${props.userProfile.firstName} ${props.userProfile.lastName}`}
-        />
+        {props.userProfile.profilePictureLink !== '' ? (
+          <img
+            src={props.userProfile.profilePictureLink}
+            alt={`${props.userProfile.firstName} ${props.userProfile.lastName}`}
+          />
+        ) : (
+          <div className={styles.noProfilePicture}>
+            <span>
+              {props.userProfile.firstName.slice(0, 1)}
+              {props.userProfile.lastName.slice(0, 1)}
+            </span>
+          </div>
+        )}
       </div>
       <div className={styles.profileInfo}>
         <h1 className={styles.profileName}>

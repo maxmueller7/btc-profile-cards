@@ -21,6 +21,7 @@ Click <a href="https://btc-cards.herokuapp.com/" target="_blank">here</a> and wa
 | 8/18 | 8:40pm  | 9:40pm  | 4:20 hrs |
 | 8/19 | 8:40pm  | 10:20pm | 6:00 hrs |
 | 8/20 | 12:00pm | 12:55pm | 6:55 hrs |
+| 8/22 | 1:00pm  | 1:45pm  | 7:40 hrs |
 
 <hr />
 
